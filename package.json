@@ -1,0 +1,36 @@
+{
+  "name": "ttrpg-api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "^4.18.2",
+    "http-errors": "~1.6.3",
+    "jade": "^1.9.2",
+    "morgan": "~1.9.1"
+  },
+  "description": "The one stop api for TTRPG character management",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hylandude/ttrpg-api.git"
+  },
+  "keywords": [
+    "ttrpg",
+    "d&d",
+    "pathfinder",
+    "fate",
+    "character",
+    "management"
+  ],
+  "author": "Sela Farrera",
+  "license": "ACSL",
+  "bugs": {
+    "url": "https://github.com/Hylandude/ttrpg-api/issues"
+  },
+  "homepage": "https://github.com/Hylandude/ttrpg-api#readme"
+}
