@@ -31,7 +31,6 @@ const create = async (req, res) => {
 
 const show = async (req, res) => {
 	try {
-		console.log("SHOW");
 		if (!req.params.id) {
 			return res.json({
 				success: false,
