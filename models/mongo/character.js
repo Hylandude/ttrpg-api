@@ -7,13 +7,13 @@ const characterSchema = {
 		get: (value) => Math.round(value),
 		set: (value) => Math.round(value),
 	},
-	gender: { type: String, trim: true },
-	height: Number,
-	weight: Number,
-	eyeColor: { type: String, trim: true },
-	skinTone: { type: String, trim: true },
-	hairColor: { type: String, trim: true },
-	hasHorns: Boolean,
+	gender: { type: String, trim: true, lowercase: true },
+	height: { type: Number, default: 0 }, //fuck imperial system this is a value in meters
+	weight: { type: Number, default: 0 }, //I'm not implementing unit conversion, you want it? Fork the project n do it yourself
+	eyeColor: { type: String, trim: true, lowercase: true },
+	skinTone: { type: String, trim: true, lowercase: true },
+	hairColor: { type: String, trim: true, lowercase: true },
+	hasHorns: { type: Boolean, default: false },
 	birthday: {
 		isTraditional: { type: Boolean, required: true, default: true },
 		date: Date,
@@ -21,7 +21,7 @@ const characterSchema = {
 	},
 	summary: String,
 	dnd5eSheet: { type: mongoose.Schema.Types.ObjectId, ref: "dnd5eSheet" },
-	player: {
+	playerId: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: "Player",
 		required: true,
