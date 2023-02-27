@@ -41,7 +41,12 @@ const search = (searchParams) => {
 			let characterQuery = {
 				playerId: searchParams.playerId,
 			};
-			//TODO: implement search based on different character traits
+
+			if (searchParams.name)
+				characterQuery.name = { $regex: new RegExp(searchParams.name, "i") };
+			if (searchParams.summary)
+				characterQuery.summary = { $regex: new RegExp(searchParams.name, "i") };
+
 			let characters = await Character.find(characterQuery).lean().exec();
 			return resolve(characters);
 		} catch (e) {
@@ -57,9 +62,7 @@ const update = (characterId, characterParams) => {
 			if (!character) return reject(`Character:${characterId} not found`);
 
 			characterParams = paramsCleaner(characterParams, "Character");
-			delete characterParams.password;
-			delete characterParams.apiKey;
-			delete characterParams.characters;
+			delete characterParams.playerId;
 
 			await Character.findOneAndUpdate(
 				{ _id: character._id },
