@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { rollADice } = require("../../src/helpers/rollADice.js").DiceHelper;
 
 const round = (value) => Math.round(value);
 
@@ -9,11 +10,6 @@ const proficiencyExperticeMultiplier = (skill) =>
 
 const getSkillBonus = (skill, proficiencyBonus, modifier) =>
 	modifier + proficiencyBonus * proficiencyExperticeMultiplier(skill);
-
-const rollADice = (type) => {
-	let max = parseInt(type.split("d")[1]) + 1;
-	return Math.floor(Math.random() * (max - 1) + 1);
-};
 
 const cappedSum = (a, b, cap) => (a + b > cap ? cap : a + b);
 
@@ -482,27 +478,30 @@ const methods = {
 	getInitiativeBonus() {
 		return this.getAbilityScoreModifiers()["dexterity"];
 	},
-	rollDeathSave() {
+	rollDeathSave(roll) {
 		if (
 			this.hitPointCurrent != 0 ||
 			this.deathSaves.success == 3 ||
 			this.deathSaves.failure == 3
 		)
 			return;
-		let roll = rollADice("d20");
+
 		if (roll == 1) {
 			this.deathSaves.failure = cappedSum(2, this.deathSaves.failure, 3);
+			return roll >= 10;
 		}
 		if (roll == 20) {
 			this.deathSaves.success = 0;
 			this.deathSaves.failure = 0;
 			this.hitPointCurrent = 1;
+			return roll >= 10;
 		}
 		if (roll >= 10) {
 			this.deathSaves.success++;
 		} else {
 			this.deathSaves.failure++;
 		}
+		return roll >= 10;
 	},
 	useHitDice() {
 		if (
@@ -519,7 +518,8 @@ const methods = {
 		);
 	},
 	checkAttackHits(hit) {
-		return this.armorClass > hit;
+		console.log(hit, this.armorClass <= hit);
+		return this.armorClass <= hit;
 	},
 	rollInitiative() {
 		return rollADice("d20") + this.getInitiativeBonus();
