@@ -1,8 +1,12 @@
 const paramsCleaner = (params, modelName) => {
-	const model = require(`../../models/mongo/${modelName.toLowerCase()}`);
+	modelName = modelName.toLowerCase();
+	modelName = modelName == "dnd5esheet" ? "dnd5eSheet" : modelName;
+	const model = require(`../../models/mongo/${modelName}`);
+
 	const cleanParams = {};
 	for (let key in model.schema.paths) {
-		cleanParams[key] = params[key];
+		key = key.indexOf(".") >= 0 ? key.split(".")[0] : key;
+		if (params[key]) cleanParams[key] = params[key];
 	}
 	return cleanParams;
 };
