@@ -252,6 +252,13 @@ const dnd5eSheetSchema = {
 		},
 	},
 	alignment: String,
+	classes: [
+		{
+			className: String,
+			subClass: String,
+		},
+	],
+	background: String,
 	personalityTraits: [String],
 	ideals: [String],
 	bonds: [String],

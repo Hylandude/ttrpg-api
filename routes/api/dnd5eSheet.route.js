@@ -11,6 +11,10 @@ module.exports = (router) => {
 	//Actions
 	router.put("/dnd5eSheet/:id/deathSave", Dnd5eSheetController.rollDeathSave);
 	router.put("/dnd5eSheet/:id/beAttacked", Dnd5eSheetController.beAttacked);
+	router.put(
+		"/dnd5eSheet/:id/convertWallet",
+		Dnd5eSheetController.convertWallet
+	);
 
 	return router;
 };

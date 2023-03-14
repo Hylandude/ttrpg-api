@@ -8,6 +8,7 @@ const Dnd5eSheetController = function () {
 	this.destroy = destroy;
 	this.rollDeathSave = rollDeathSave;
 	this.beAttacked = beAttacked;
+	this.convertWallet = convertWallet;
 };
 
 const addCalculatedScores = function (dnd5eSheet) {
@@ -129,10 +130,8 @@ const rollDeathSave = async (req, res) => {
 		let deathRoll = req.body.deathRoll
 			? req.body.deathRoll
 			: DiceHelper.rollADice("d20");
-		console.log(deathRoll);
 
 		let savePassed = dnd5eSheet.rollDeathSave(deathRoll);
-		console.log(savePassed);
 		await dnd5eSheet.save();
 
 		dnd5eSheet = addCalculatedScores(dnd5eSheet);
@@ -166,7 +165,6 @@ const beAttacked = async (req, res) => {
 			: req.body.attackRoll;
 
 		let dnd5eSheet = await Dnd5eSheetProvider.findOne(req.params.id);
-		console.log(req.body.attackRoll);
 		let doesAttackHit = dnd5eSheet.checkAttackHits(req.body.attackRoll);
 
 		if (req.body.damage) {
@@ -187,6 +185,40 @@ const beAttacked = async (req, res) => {
 		return res.json({
 			success: true,
 			resource: { attackHit: doesAttackHit, dnd5eSheet },
+		});
+	} catch (e) {
+		console.log(e);
+		return res.json({
+			success: false,
+			message: e.toString(),
+		});
+	}
+};
+
+const convertWallet = async (req, res) => {
+	try {
+		if (!req.params.id) {
+			return res.json({
+				success: false,
+				message: "Missing dnd5eSheet id",
+			});
+		}
+
+		if (!req.body.conversionType) {
+			return res.json({
+				success: false,
+				message: "Missing conversion type",
+			});
+		}
+
+		let dnd5eSheet = await Dnd5eSheetProvider.findOne(req.params.id);
+		dnd5eSheet.convertMoney(req.body.conversionType, req.body.ignoreElectrum);
+		await dnd5eSheet.save();
+		dnd5eSheet = addCalculatedScores(dnd5eSheet);
+
+		return res.json({
+			success: true,
+			resource: { dnd5eSheet, wallet: dnd5eSheet.inventory.wallet },
 		});
 	} catch (e) {
 		console.log(e);
