@@ -300,6 +300,7 @@ const dnd5eSheetSchema = {
 		},
 	},
 	inventory: {
+		backpack: [{ item: String, quantity: Number }],
 		wallet: {
 			copper: {
 				type: Number,
@@ -333,6 +334,7 @@ const dnd5eSheetSchema = {
 			},
 		},
 	},
+	features: [{ name: String, text: String }],
 	creatureType: {
 		size: { type: String, default: "medium" },
 		species: { type: String, default: "humanoid" },
