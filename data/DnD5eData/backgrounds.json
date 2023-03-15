@@ -29,20 +29,17 @@
       ],
       "options": {
         "a": [
-          [
-            {
-              "item": "book|phb",
-              "displayName": "prayer book"
-            }
-          ],
-          [
-            {
-              "item": "book|phb",
-              "displayName": "prayer book"
-            }
-          ]
+          {
+            "item": "book",
+            "quantity": 1
+          }
         ],
-        "b": [],
+        "b": [
+          {
+            "item": "prayer wheel",
+            "quantity": 1
+          }
+        ],
         "c": [],
         "d": []
       },
@@ -328,7 +325,7 @@
       "anyStandard": 1
     },
     "toolProficiencies": {
-      "anyStandard": true
+      "vehicles (land)": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -339,28 +336,25 @@
       ],
       "options": {
         "a": [
-          [
-            {
-              "special": "bronze discus"
-            }
-          ],
-          [
-            {
-              "special": "bronze discus"
-            }
-          ],
-          [
-            {
-              "special": "lucky charm"
-            }
-          ],
-          [
-            {
-              "special": "lucky charm"
-            }
-          ]
+          {
+            "item": "bronze discus",
+            "quantity": 1
+          },
+          {
+            "item": "lucky charm",
+            "quantity": 1
+          }
         ],
-        "b": [],
+        "b": [
+          {
+            "item": "leather ball",
+            "quantity": 1
+          },
+          {
+            "item": "past trophy",
+            "quantity": 1
+          }
+        ],
         "c": [],
         "d": []
       },
@@ -408,28 +402,6 @@
       "Any defeat or failure on my part is because my opponent cheated.",
       "I must be the captain of any group I join."
     ]
-  },
-  "Augen Trust (Spy)": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
   },
   "Azorius Functionary": {
     "skillProficiencies": {
@@ -505,292 +477,6 @@
       "I wish I had joined the Boros, but I fear they'd never accept me."
     ]
   },
-  "Baldur's Gate Acolyte": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
-  "Baldur's Gate Charlatan": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
-  "Baldur's Gate Criminal": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
-  "Baldur's Gate Entertainer": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
-  "Baldur's Gate Folk Hero": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
-  "Baldur's Gate Guild Artisan": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
-  "Baldur's Gate Hermit": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
-  "Baldur's Gate Noble": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
-  "Baldur's Gate Outlander": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
-  "Baldur's Gate Sage": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
-  "Baldur's Gate Sailor": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
-  "Baldur's Gate Soldier": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
-  "Baldur's Gate Urchin": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
   "Boros Legionnaire": {
     "skillProficiencies": {
       "athletics": true,
@@ -807,7 +493,7 @@
       }
     },
     "toolProficiencies": {
-      "choose": true
+      "gaming set": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -888,7 +574,7 @@
       "anyStandard": 2
     },
     "toolProficiencies": {
-      "anyStandard": true
+      "disguise kit": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -959,7 +645,8 @@
     },
     "languageProficiencies": {},
     "toolProficiencies": {
-      "anyStandard": true
+      "disguise kit": true,
+      "forgery kit": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -974,34 +661,29 @@
       ],
       "options": {
         "a": [
-          [
-            {
-              "special": "stoppered bottles filled with colored liquid",
-              "quantity": 10
-            }
-          ],
-          [
-            {
-              "special": "stoppered bottles filled with colored liquid",
-              "quantity": 10
-            }
-          ],
-          [
-            {
-              "special": "stoppered bottles filled with colored liquid",
-              "quantity": 10
-            }
-          ],
-          [
-            {
-              "special": "stoppered bottles filled with colored liquid",
-              "quantity": 10
-            }
-          ]
+          {
+            "item": "stoppered bottles filled with colored liquid",
+            "quantity": 10
+          }
         ],
-        "b": [],
-        "c": [],
-        "d": []
+        "b": [
+          {
+            "item": "set of weighted dice",
+            "quantity": 1
+          }
+        ],
+        "c": [
+          {
+            "item": "deck of marked cards",
+            "quantity": 1
+          }
+        ],
+        "d": [
+          {
+            "item": "signet ring of an imaginary duke",
+            "quantity": 1
+          }
+        ]
       },
       "wallet": {
         "copper": 1500
@@ -1103,13 +785,14 @@
       "anyStandard": 1
     },
     "toolProficiencies": {
-      "anyStandard": true
+      "anyArtisansTool": true
     },
     "startingEquipment": {
       "alwaysGet": [
         {
           "item": "toolArtisan",
-          "quantity": 1
+          "quantity": 1,
+          "isType": true
         },
         {
           "item": "maker's mark chisel used to mark your handiwork with the symbol of the clan of crafters you learned your skill from",
@@ -1207,28 +890,6 @@
     "bonds": [],
     "flaws": []
   },
-  "Cobalt Scholar (Sage)": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
   "Courtier": {
     "skillProficiencies": {
       "insight": true,
@@ -1273,7 +934,8 @@
     },
     "languageProficiencies": {},
     "toolProficiencies": {
-      "anyStandard": true
+      "gaming set": true,
+      "thieves' tools": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -1346,7 +1008,7 @@
       "anyStandard": 1
     },
     "toolProficiencies": {
-      "anyStandard": true
+      "disguise kit": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -1457,13 +1119,15 @@
     },
     "languageProficiencies": {},
     "toolProficiencies": {
-      "anyStandard": true
+      "disguise kit": true,
+      "musical instrument": true
     },
     "startingEquipment": {
       "alwaysGet": [
         {
           "item": "instrumentMusical",
-          "quantity": 1
+          "quantity": 1,
+          "isType": true
         },
         {
           "item": "the favor of an admirer (love letter, lock of hair, or trinket)",
@@ -1534,7 +1198,7 @@
       "anyStandard": 1
     },
     "toolProficiencies": {
-      "anyStandard": true
+      "disguise kit": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -1667,13 +1331,14 @@
       "anyStandard": 1
     },
     "toolProficiencies": {
-      "anyStandard": true
+      "anyArtisansTool": true
     },
     "startingEquipment": {
       "alwaysGet": [
         {
           "item": "toolArtisan",
-          "quantity": 1
+          "quantity": 1,
+          "isType": true
         },
         {
           "item": "merchant's scale",
@@ -1768,18 +1433,19 @@
       ],
       "options": {
         "a": [
-          [
-            {
-              "equipmentType": "instrumentMusical"
-            }
-          ],
-          [
-            {
-              "equipmentType": "instrumentMusical"
-            }
-          ]
+          {
+            "item": "instrumentMusical",
+            "quantity": 1,
+            "isType": true
+          }
         ],
-        "b": [],
+        "b": [
+          {
+            "item": "setGaming",
+            "quantity": 1,
+            "isType": true
+          }
+        ],
         "c": [],
         "d": []
       },
@@ -1835,14 +1501,14 @@
       "anyStandard": 1
     },
     "toolProficiencies": {
-      "anyStandard": true,
-      "choose": true
+      "musical instrument": true
     },
     "startingEquipment": {
       "alwaysGet": [
         {
           "item": "instrumentMusical",
-          "quantity": 1
+          "quantity": 1,
+          "isType": true
         },
         {
           "item": "traveler's clothes",
@@ -1927,18 +1593,17 @@
       ],
       "options": {
         "a": [
-          [
-            {
-              "special": "favorite fishing lure"
-            }
-          ],
-          [
-            {
-              "special": "favorite fishing lure"
-            }
-          ]
+          {
+            "item": "favorite fishing lure",
+            "quantity": 1
+          }
         ],
-        "b": [],
+        "b": [
+          {
+            "item": "oiled leather wading boots",
+            "quantity": 1
+          }
+        ],
         "c": [],
         "d": []
       },
@@ -1994,13 +1659,15 @@
     },
     "languageProficiencies": {},
     "toolProficiencies": {
-      "anyStandard": true
+      "anyArtisansTool": true,
+      "vehicles (land)": true
     },
     "startingEquipment": {
       "alwaysGet": [
         {
           "item": "toolArtisan",
-          "quantity": 1
+          "quantity": 1,
+          "isType": true
         },
         {
           "item": "shovel",
@@ -2075,13 +1742,14 @@
       "anyStandard": 1
     },
     "toolProficiencies": {
-      "anyStandard": true
+      "gaming set": true
     },
     "startingEquipment": {
       "alwaysGet": [
         {
           "item": "setGaming",
-          "quantity": 1
+          "quantity": 1,
+          "isType": true
         },
         {
           "item": "lucky charm",
@@ -2158,7 +1826,7 @@
       }
     },
     "toolProficiencies": {
-      "choose": true
+      "poisoner's kit": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -2177,18 +1845,17 @@
       ],
       "options": {
         "a": [
-          [
-            {
-              "special": "pet beetle"
-            }
-          ],
-          [
-            {
-              "special": "pet beetle"
-            }
-          ]
+          {
+            "item": "pet beetle",
+            "quantity": 1
+          }
         ],
-        "b": [],
+        "b": [
+          {
+            "item": "pet spider",
+            "quantity": 1
+          }
+        ],
         "c": [],
         "d": []
       },
@@ -2244,7 +1911,8 @@
     },
     "languageProficiencies": {},
     "toolProficiencies": {
-      "choose": true
+      "thieves' tools": true,
+      "musical instrument": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -2258,7 +1926,8 @@
         },
         {
           "item": "instrumentMusical",
-          "quantity": 1
+          "quantity": 1,
+          "isType": true
         },
         {
           "item": "gold-plated ring depicting a smiling face",
@@ -2332,7 +2001,7 @@
       }
     },
     "toolProficiencies": {
-      "choose": true
+      "herbalism kit": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -2421,13 +2090,14 @@
       "anyStandard": 1
     },
     "toolProficiencies": {
-      "anyStandard": true
+      "anyArtisansTool": true
     },
     "startingEquipment": {
       "alwaysGet": [
         {
           "item": "toolArtisan",
-          "quantity": 1
+          "quantity": 1,
+          "isType": true
         },
         {
           "item": "letter of introduction from your guild",
@@ -2602,7 +2272,7 @@
       "anyStandard": 1
     },
     "toolProficiencies": {
-      "anyStandard": true
+      "herbalism kit": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -2681,7 +2351,22 @@
     },
     "languageProficiencies": {},
     "toolProficiencies": {
-      "anyStandard": true
+      "alchemist's supplies": true,
+      "tinker's tools": true,
+      "gaming set": true,
+      "vehicles (land)": true,
+      "brewer's supplies": true,
+      "cook's utensils": true,
+      "herbalism kit": true,
+      "thieves' tools": true,
+      "vehicles (water)": true,
+      "vehicles (air)": true,
+      "navigator's tools": true,
+      "disguise kit": true,
+      "musical instrument": true,
+      "calligrapher's supplies": true,
+      "forgery kit": true,
+      "poisoner's kit": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -2785,18 +2470,19 @@
       ],
       "options": {
         "a": [
-          [
-            {
-              "equipmentType": "setGaming"
-            }
-          ],
-          [
-            {
-              "equipmentType": "setGaming"
-            }
-          ]
+          {
+            "item": "setGaming",
+            "quantity": 1,
+            "isType": true
+          }
         ],
-        "b": [],
+        "b": [
+          {
+            "item": "instrumentMusical",
+            "quantity": 1,
+            "isType": true
+          }
+        ],
         "c": [],
         "d": []
       },
@@ -2822,7 +2508,8 @@
     },
     "languageProficiencies": {},
     "toolProficiencies": {
-      "anyStandard": true
+      "gaming set": true,
+      "vehicles (land)": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -2836,7 +2523,8 @@
         },
         {
           "item": "setGaming",
-          "quantity": 1
+          "quantity": 1,
+          "isType": true
         },
         {
           "item": "common clothes",
@@ -2905,7 +2593,8 @@
     },
     "languageProficiencies": {},
     "toolProficiencies": {
-      "anyStandard": true
+      "thieves' tools": true,
+      "anyArtisansTool": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -2952,7 +2641,8 @@
     },
     "languageProficiencies": {},
     "toolProficiencies": {
-      "anyStandard": true
+      "disguise kit": true,
+      "thieves' tools": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -3057,7 +2747,7 @@
       }
     },
     "toolProficiencies": {
-      "choose": true
+      "anyArtisansTool": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -3067,7 +2757,8 @@
         },
         {
           "item": "toolArtisan",
-          "quantity": 1
+          "quantity": 1,
+          "isType": true
         },
         {
           "item": "the charred and twisted remains of a failed experiment",
@@ -3297,28 +2988,6 @@
     "bonds": [],
     "flaws": []
   },
-  "Luxonborn (Acolyte)": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
   "Mage of High Sorcery": {
     "skillProficiencies": {
       "arcana": true,
@@ -3371,7 +3040,8 @@
     },
     "languageProficiencies": {},
     "toolProficiencies": {
-      "anyStandard": true
+      "vehicles (water)": true,
+      "vehicles (land)": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -3446,7 +3116,8 @@
     },
     "languageProficiencies": {},
     "toolProficiencies": {
-      "anyStandard": true
+      "gaming set": true,
+      "vehicles (land)": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -3460,7 +3131,8 @@
         },
         {
           "item": "setGaming",
-          "quantity": 1
+          "quantity": 1,
+          "isType": true
         }
       ],
       "options": {
@@ -3484,28 +3156,6 @@
     "bonds": [],
     "flaws": []
   },
-  "Myriad Operative (Criminal)": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
   "Noble": {
     "skillProficiencies": {
       "history": true,
@@ -3515,7 +3165,7 @@
       "anyStandard": 1
     },
     "toolProficiencies": {
-      "anyStandard": true
+      "gaming set": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -3675,7 +3325,7 @@
       "anyStandard": 1
     },
     "toolProficiencies": {
-      "anyStandard": true
+      "musical instrument": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -3756,13 +3406,14 @@
       "anyStandard": 1
     },
     "toolProficiencies": {
-      "anyStandard": true
+      "anyArtisansTool": true
     },
     "startingEquipment": {
       "alwaysGet": [
         {
           "item": "toolArtisan",
-          "quantity": 1
+          "quantity": 1,
+          "isType": true
         },
         {
           "item": "fine clothes",
@@ -3853,18 +3504,19 @@
       ],
       "options": {
         "a": [
-          [
-            {
-              "equipmentType": "toolArtisan"
-            }
-          ],
-          [
-            {
-              "equipmentType": "toolArtisan"
-            }
-          ]
+          {
+            "item": "toolArtisan",
+            "quantity": 1,
+            "isType": true
+          }
         ],
-        "b": [],
+        "b": [
+          {
+            "item": "instrumentMusical",
+            "quantity": 1,
+            "isType": true
+          }
+        ],
         "c": [],
         "d": []
       },
@@ -3892,7 +3544,7 @@
       "anyStandard": 1
     },
     "toolProficiencies": {
-      "anyStandard": true
+      "anyArtisansTool": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -3952,7 +3604,7 @@
       }
     },
     "toolProficiencies": {
-      "choose": true
+      "musical instrument": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -3962,7 +3614,8 @@
         },
         {
           "item": "instrumentMusical",
-          "quantity": 1
+          "quantity": 1,
+          "isType": true
         },
         {
           "item": "costume clothes",
@@ -4044,28 +3697,6 @@
       "There's no such thing as too much pleasure."
     ]
   },
-  "Revelry Pirate (Sailor)": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
   "Rival Intern": {
     "skillProficiencies": {
       "history": true,
@@ -4075,13 +3706,14 @@
       "anyStandard": 1
     },
     "toolProficiencies": {
-      "anyStandard": true
+      "anyArtisansTool": true
     },
     "startingEquipment": {
       "alwaysGet": [
         {
           "item": "toolArtisan",
-          "quantity": 1
+          "quantity": 1,
+          "isType": true
         },
         {
           "item": "ledger from your previous employer containing a small piece of useful information",
@@ -4233,7 +3865,8 @@
     },
     "languageProficiencies": {},
     "toolProficiencies": {
-      "anyStandard": true
+      "navigator's tools": true,
+      "vehicles (water)": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -4404,7 +4037,8 @@
     },
     "languageProficiencies": {},
     "toolProficiencies": {
-      "choose": true
+      "carpenter's tools": true,
+      "vehicles (water)": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -4643,7 +4277,7 @@
     },
     "languageProficiencies": {},
     "toolProficiencies": {
-      "anyStandard": true
+      "vehicles (water)": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -4654,18 +4288,17 @@
       ],
       "options": {
         "a": [
-          [
-            {
-              "special": "fancy leather vest"
-            }
-          ],
-          [
-            {
-              "special": "fancy leather vest"
-            }
-          ]
+          {
+            "item": "fancy leather vest",
+            "quantity": 1
+          }
         ],
-        "b": [],
+        "b": [
+          {
+            "item": "pair of leather boots",
+            "quantity": 1
+          }
+        ],
         "c": [],
         "d": []
       },
@@ -4721,7 +4354,8 @@
     },
     "languageProficiencies": {},
     "toolProficiencies": {
-      "anyStandard": true
+      "gaming set": true,
+      "vehicles (land)": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -4740,20 +4374,17 @@
       ],
       "options": {
         "a": [
-          [
-            {
-              "item": "dice set|phb",
-              "displayName": "bone dice set"
-            }
-          ],
-          [
-            {
-              "item": "dice set|phb",
-              "displayName": "bone dice set"
-            }
-          ]
+          {
+            "item": "dice set",
+            "quantity": 1
+          }
         ],
-        "b": [],
+        "b": [
+          {
+            "item": "playing card set",
+            "quantity": 1
+          }
+        ],
         "c": [],
         "d": []
       },
@@ -4855,7 +4486,8 @@
     },
     "languageProficiencies": {},
     "toolProficiencies": {
-      "anyStandard": true
+      "disguise kit": true,
+      "thieves' tools": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -4960,18 +4592,17 @@
       ],
       "options": {
         "a": [
-          [
-            {
-              "special": "totemic token"
-            }
-          ],
-          [
-            {
-              "special": "totemic token"
-            }
-          ]
+          {
+            "item": "totemic token",
+            "quantity": 1
+          }
         ],
-        "b": [],
+        "b": [
+          {
+            "item": "set of tattoos marking your loyalty to Uthgar and your tribal totem",
+            "quantity": 1
+          }
+        ],
         "c": [],
         "d": []
       },
@@ -4990,193 +4621,6 @@
     "bonds": [],
     "flaws": []
   },
-  "Variant City Watch (Investigator)": {
-    "skillProficiencies": {
-      "insight": true,
-      "investigation": true
-    },
-    "languageProficiencies": {
-      "anyStandard": 2
-    },
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [
-        {
-          "item": "uniform in the style of your unit and indicative of your rank",
-          "quantity": 1
-        },
-        {
-          "item": "horn",
-          "quantity": 1
-        },
-        {
-          "item": "manacles",
-          "quantity": 1
-        }
-      ],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 1000
-      }
-    },
-    "features": [
-      {
-        "name": "Feature: Watcher's Eye",
-        "value": "Your experience in enforcing the law, and dealing with lawbreakers, gives you a feel for local laws and criminals. You can easily find the local outpost of the watch or a similar organization, and just as easily pick out the dens of criminal activity in a community, although you're more likely to be welcome in the former locations rather than the latter."
-      }
-    ],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
-  "Variant Criminal (Spy)": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
-  "Variant Entertainer (Gladiator)": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
-  "Variant Guild Artisan (Guild Merchant)": {
-    "skillProficiencies": {
-      "insight": true,
-      "persuasion": true
-    },
-    "languageProficiencies": {},
-    "toolProficiencies": {
-      "choose": {
-        "from": [
-          "anyArtisansTool",
-          "navigator's tools"
-        ]
-      }
-    },
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
-  "Variant Noble (Knight)": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
-  "Variant Noble (Retainers)": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
-  "Variant Sailor (Pirate)": {
-    "skillProficiencies": {},
-    "languageProficiencies": {},
-    "toolProficiencies": {},
-    "startingEquipment": {
-      "alwaysGet": [],
-      "options": {
-        "a": [],
-        "b": [],
-        "c": [],
-        "d": []
-      },
-      "wallet": {
-        "copper": 0
-      }
-    },
-    "features": [],
-    "personalityTraits": [],
-    "ideals": [],
-    "bonds": [],
-    "flaws": []
-  },
   "Vizier": {
     "skillProficiencies": {
       "history": true,
@@ -5184,7 +4628,8 @@
     },
     "languageProficiencies": {},
     "toolProficiencies": {
-      "anyStandard": true
+      "anyArtisansTool": true,
+      "musical instrument": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -5203,18 +4648,19 @@
       ],
       "options": {
         "a": [
-          [
-            {
-              "equipmentType": "toolArtisan"
-            }
-          ],
-          [
-            {
-              "equipmentType": "toolArtisan"
-            }
-          ]
+          {
+            "item": "toolArtisan",
+            "quantity": 1,
+            "isType": true
+          }
         ],
-        "b": [],
+        "b": [
+          {
+            "item": "instrumentMusical",
+            "quantity": 1,
+            "isType": true
+          }
+        ],
         "c": [],
         "d": []
       },
@@ -5274,7 +4720,7 @@
       "anyStandard": 1
     },
     "toolProficiencies": {
-      "anyStandard": true
+      "poisoner's kit": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -5373,14 +4819,17 @@
       ],
       "options": {
         "a": [
-          [
-            "signet ring|phb"
-          ],
-          [
-            "signet ring|phb"
-          ]
+          {
+            "item": "signet ring",
+            "quantity": 1
+          }
         ],
-        "b": [],
+        "b": [
+          {
+            "item": "brooch",
+            "quantity": 1
+          }
+        ],
         "c": [],
         "d": []
       },
@@ -5406,7 +4855,8 @@
     },
     "languageProficiencies": {},
     "toolProficiencies": {
-      "anyStandard": true
+      "navigator's tools": true,
+      "vehicles (space)": true
     },
     "startingEquipment": {
       "alwaysGet": [
@@ -5481,14 +4931,18 @@
       ],
       "options": {
         "a": [
-          [
-            "disguise kit|phb"
-          ],
-          [
-            "disguise kit|phb"
-          ]
+          {
+            "item": "disguise kit",
+            "quantity": 1
+          }
         ],
-        "b": [],
+        "b": [
+          {
+            "item": "instrumentMusical",
+            "quantity": 1,
+            "isType": true
+          }
+        ],
         "c": [],
         "d": []
       },
@@ -5543,7 +4997,7 @@
       "anyStandard": 1
     },
     "toolProficiencies": {
-      "anyStandard": true
+      "herbalism kit": true
     },
     "startingEquipment": {
       "alwaysGet": [

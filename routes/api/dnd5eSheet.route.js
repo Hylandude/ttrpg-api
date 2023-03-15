@@ -11,6 +11,17 @@ module.exports = (router) => {
 	//Actions
 	router.put("/dnd5eSheet/:id/deathSave", Dnd5eSheetController.rollDeathSave);
 	router.put("/dnd5eSheet/:id/beAttacked", Dnd5eSheetController.beAttacked);
+	router.put(
+		"/dnd5eSheet/:id/convertWallet",
+		Dnd5eSheetController.convertWallet
+	);
+	router.put("/dnd5eSheet/:id/skillCheck", Dnd5eSheetController.skillCheck);
+	router.put("/dnd5eSheet/:id/savingThrow", Dnd5eSheetController.savingThrow);
+	router.put("/dnd5eSheet/:id/useHitDice", Dnd5eSheetController.useHitDice);
+	router.put(
+		"/dnd5eSheet/:id/rollInitiative",
+		Dnd5eSheetController.rollInitiative
+	);
 
 	return router;
 };

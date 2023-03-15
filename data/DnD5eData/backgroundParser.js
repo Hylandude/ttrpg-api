@@ -4,6 +4,8 @@ const main = async function () {
 	for (background of backgroundData) {
 		if (background.source.indexOf("UA") == 0) continue;
 		if (background.source.indexOf("AL") == 0) continue;
+		if (background.name.indexOf("Baldur's Gate") == 0) continue;
+		if (background.name.match(/\(.+\)/)) continue;
 		let name = background.name;
 		allBackgrounds[name] = {
 			skillProficiencies: {},
@@ -59,7 +61,7 @@ const main = async function () {
 					allBackgrounds[name].toolProficiencies.choose = tool.choose;
 					continue;
 				}
-				for (key in language) {
+				for (key in tool) {
 					allBackgrounds[name].toolProficiencies[key] = true;
 				}
 			}
@@ -68,17 +70,38 @@ const main = async function () {
 		//parse items
 		if (background.startingEquipment) {
 			for (equipment of background.startingEquipment) {
-				if (equipment.a) {
-					allBackgrounds[name].startingEquipment.options.a.push(equipment.a);
-				}
-				if (equipment.b) {
-					allBackgrounds[name].startingEquipment.options.a.push(equipment.a);
-				}
-				if (equipment.c) {
-					allBackgrounds[name].startingEquipment.options.a.push(equipment.a);
-				}
-				if (equipment.d) {
-					allBackgrounds[name].startingEquipment.options.a.push(equipment.a);
+				if (equipment.a || equipment.b || equipment.c || equipment.d) {
+					let options = {
+						a: equipment.a,
+						b: equipment.b,
+						c: equipment.c,
+						d: equipment.d,
+					};
+					for (optionName in options) {
+						if (!options[optionName]) continue;
+						let option = options[optionName][0];
+						if (typeof option == "string") {
+							option = { item: option.split("|")[0].trim(), quantity: 1 };
+						} else {
+							if (option.equipmentType) {
+								option = {
+									item: option.equipmentType,
+									quantity: 1,
+									isType: true,
+								};
+							} else {
+								option = {
+									item: option.special
+										? option.special
+										: option.item.split("|")[0].trim(),
+									quantity: option.quantity || 1,
+								};
+							}
+						}
+						allBackgrounds[name].startingEquipment.options[optionName].push(
+							option
+						);
+					}
 				}
 				if (equipment._) {
 					for (item of equipment._) {
@@ -105,6 +128,7 @@ const main = async function () {
 								allBackgrounds[name].startingEquipment.alwaysGet.push({
 									item: item.equipmentType,
 									quantity: 1,
+									isType: true,
 								});
 							} else {
 								allBackgrounds[name].startingEquipment.alwaysGet.push({
@@ -162,7 +186,13 @@ const main = async function () {
 	}
 
 	const fs = require("fs");
-	fs.writeFileSync("backgrounds.json", JSON.stringify(allBackgrounds, null, 2));
+	const fileData = JSON.stringify(allBackgrounds, null, 2);
+	fs.writeFile("backgrounds.json", fileData, () => {
+		console.log("DONE");
+		console.log(
+			`Parsed a total of: ${Object.keys(allBackgrounds).length} backgrounds`
+		);
+	});
 };
 
 main();

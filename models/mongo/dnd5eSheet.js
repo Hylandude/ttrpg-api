@@ -15,6 +15,8 @@ const cappedSum = (a, b, cap) => (a + b > cap ? cap : a + b);
 
 const cappedSubstract = (a, b, cap) => (a - b < cap ? cap : a - b);
 
+const getFractional = (a) => ((a * 10) % 10) / 10;
+
 const dnd5eSheetSchema = {
 	characterId: {
 		type: mongoose.Schema.Types.ObjectId,
@@ -22,6 +24,13 @@ const dnd5eSheetSchema = {
 		required: true,
 	},
 	inspiration: { type: Boolean, default: false, required: true },
+	additionalInitiativeBonus: {
+		type: Number,
+		default: 0,
+		required: true,
+		get: round,
+		set: round,
+	},
 	proficiencyBonus: {
 		type: Number,
 		required: true,
@@ -250,6 +259,13 @@ const dnd5eSheetSchema = {
 		},
 	},
 	alignment: String,
+	classes: [
+		{
+			className: String,
+			subClass: String,
+		},
+	],
+	background: String,
 	personalityTraits: [String],
 	ideals: [String],
 	bonds: [String],
@@ -291,6 +307,7 @@ const dnd5eSheetSchema = {
 		},
 	},
 	inventory: {
+		backpack: [{ item: String, quantity: Number }],
 		wallet: {
 			copper: {
 				type: Number,
@@ -299,12 +316,6 @@ const dnd5eSheetSchema = {
 				min: 0,
 			},
 			silver: {
-				type: Number,
-				required: true,
-				default: 0,
-				min: 0,
-			},
-			copper: {
 				type: Number,
 				required: true,
 				default: 0,
@@ -330,6 +341,7 @@ const dnd5eSheetSchema = {
 			},
 		},
 	},
+	features: [{ name: String, text: String }],
 	creatureType: {
 		size: { type: String, default: "medium" },
 		species: { type: String, default: "humanoid" },
@@ -476,7 +488,10 @@ const methods = {
 		return 10 + this.getSkillModifiers()[skillName];
 	},
 	getInitiativeBonus() {
-		return this.getAbilityScoreModifiers()["dexterity"];
+		return (
+			this.getAbilityScoreModifiers()["dexterity"] +
+			this.additionalInitiativeBonus
+		);
 	},
 	rollDeathSave(roll) {
 		if (
@@ -542,6 +557,76 @@ const methods = {
 			dmg = dmg - remainingDamage;
 		}
 		this.hitPointCurrent = cappedSubstract(this.hitPointCurrent, dmg, 0);
+	},
+	convertMoney(conversionType, ignoreElectrum) {
+		let { copper, silver, electrum, gold, platinum } = this.wallet;
+		switch (conversionType) {
+			case "toCopper":
+				copper += silver * 10 + electrum * 50 + gold * 100 + platinum * 1000;
+				silver = 0;
+				electrum = 0;
+				gold = 0;
+				platinum = 0;
+				break;
+			case "toSilver":
+				silver += copper / 10 + electrum * 5 + gold * 10 + platinum * 100;
+				copper = 0;
+				electrum = 0;
+				gold = 0;
+				platinum = 0;
+				break;
+			case "toElectrum":
+				electrum += copper / 50 + silver / 5 + gold * 2 + platinum * 20;
+				copper = 0;
+				silver = 0;
+				gold = 0;
+				platinum = 0;
+				break;
+			case "toGold":
+				gold += copper / 100 + silver / 10 + electrum / 2 + platinum * 10;
+				copper = 0;
+				silver = 0;
+				electrum = 0;
+				platinum = 0;
+				break;
+			case "toPlatinum":
+				platinum += copper / 1000 + silver / 100 + electrum / 20 + gold / 10;
+				copper = 0;
+				silver = 0;
+				electrum = 0;
+				gold = 0;
+				break;
+			case "toHighest":
+				platinum += copper / 1000 + silver / 100 + electrum / 20 + gold / 10;
+				let fractionalPlatinum = getFractional(platinum);
+				if (fractionalPlatinum) {
+					gold = fractionalPlatinum * 10;
+					fractionalGold = getFractional(gold);
+					if (fractionalGold) {
+						if (ignoreElectrum) {
+							silver = fractionalGold * 10;
+							fractionalSilver = getFractional(silver);
+							if (fractionalSilver) {
+								copper = fractionalSilver * 10;
+							}
+						} else {
+							electrum = fractionalGold * 2;
+							fractionalElectrum = getFractional(electrum);
+							if (fractionalElectrum) {
+								silver = fractionalElectrum * 5;
+								fractionalSilver = getFractional(silver);
+								if (fractionalSilver) {
+									copper = fractionalSilver * 10;
+								}
+							}
+						}
+					}
+				}
+				break;
+			default:
+				return;
+		}
+		this.wallet = { copper, silver, electrum, gold, platinum };
 	},
 };
 
