@@ -24,6 +24,13 @@ const dnd5eSheetSchema = {
 		required: true,
 	},
 	inspiration: { type: Boolean, default: false, required: true },
+	additionalInitiativeBonus: {
+		type: Number,
+		default: 0,
+		required: true,
+		get: round,
+		set: round,
+	},
 	proficiencyBonus: {
 		type: Number,
 		required: true,
@@ -481,7 +488,10 @@ const methods = {
 		return 10 + this.getSkillModifiers()[skillName];
 	},
 	getInitiativeBonus() {
-		return this.getAbilityScoreModifiers()["dexterity"];
+		return (
+			this.getAbilityScoreModifiers()["dexterity"] +
+			this.additionalInitiativeBonus
+		);
 	},
 	rollDeathSave(roll) {
 		if (

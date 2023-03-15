@@ -384,6 +384,23 @@ const useHitDice = async (req, res) => {
 
 const rollInitiative = async (req, res) => {
 	try {
+		if (!req.params.id) {
+			return res.json({
+				success: false,
+				message: "Missing dnd5eSheet id",
+			});
+		}
+
+		let dnd5eSheet = await Dnd5eSheetProvider.findOne(req.params.id);
+
+		let initiativeRoll = dnd5eSheet.rollInitiative();
+
+		dnd5eSheet = addCalculatedScores(dnd5eSheet);
+
+		return res.json({
+			success: true,
+			resource: { initiativeRoll, dnd5eSheet },
+		});
 	} catch (e) {
 		console.log(e);
 		return res.json({
