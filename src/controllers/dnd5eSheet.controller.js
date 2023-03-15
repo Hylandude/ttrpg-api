@@ -11,6 +11,8 @@ const Dnd5eSheetController = function () {
 	this.convertWallet = convertWallet;
 	this.skillCheck = skillCheck;
 	this.savingThrow = savingThrow;
+	this.useHitDice = useHitDice;
+	this.rollInitiative = rollInitiative;
 };
 
 const addCalculatedScores = function (dnd5eSheet) {
@@ -335,6 +337,42 @@ const savingThrow = async (req, res) => {
 
 const useHitDice = async (req, res) => {
 	try {
+		if (!req.params.id) {
+			return res.json({
+				success: false,
+				message: "Missing dnd5eSheet id",
+			});
+		}
+
+		let dnd5eSheet = await Dnd5eSheetProvider.findOne(req.params.id);
+
+		let amount = req.body.amount || 1;
+		amount = parseInt(amount);
+		if (isNaN(amount)) {
+			return res.json({
+				success: false,
+				message: "Invalid amount",
+			});
+		}
+
+		if (req.body.untilHPFull) amount = dnd5eSheet.hitDice.current;
+		amount =
+			amount > dnd5eSheet.hitDice.current ? dnd5eSheet.hitDice.current : amount;
+
+		for (
+			let i = 0;
+			i < amount || dnd5eSheet.hitPointCurrent == dnd5eSheet.hitPointMaximum;
+			i++
+		) {
+			dnd5eSheet.useHitDice();
+		}
+		await dnd5eSheet.save();
+		dnd5eSheet = addCalculatedScores(dnd5eSheet);
+
+		return res.json({
+			success: true,
+			resource: { hitDice: { used: amount }, dnd5eSheet },
+		});
 	} catch (e) {
 		console.log(e);
 		return res.json({
